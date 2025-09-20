@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8">
+  <title>Students</title>
+</head>
+<body>
+  <h1>Welcome, <span sec:authentication="name">user</span></h1>
+  <a th:href="@{/logout}">Logout</a>
+  <h2>Students list</h2>
+  <ul>
+    <li th:each="s : ${students}" th:text="${s.name} + ' (id: ' + ${s.id} + ')'"></li>
+  </ul>
+</body>
+</html>
+
