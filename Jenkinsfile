@@ -32,11 +32,8 @@ pipeline {
     }
      stage('maven') {
             steps {
-                dir('webapp') {
-                     sh 'mvn package'
+                    sh 'mvn package'
                 }
-             
-           }
         }
         stage('tomcat') {
             steps {
